@@ -19,7 +19,7 @@ function About() {
           <h2 className="text-3xl font-bold text-yellow-600 mb-4">
             About EVE Flowers
           </h2>
-          <p className="text-lg text-yellow-600 mb-8">
+          <p className="text-lg text-red-600 mb-8">
             At EVE Flowers, we believe in the power of flowers to bring joy,
             beauty, and positivity into people's lives. Our journey began with a
             simple passion for nature's most exquisite creations, and it has
