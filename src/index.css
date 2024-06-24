@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+@layer base {
+  img {
+    @apply w-full
+  }
+  
+  .section {
+    @apply container mx-auto py-5 
+  }
+}
+/* header open  */
+
+
+body {
+  font-family: "Roboto Mono", monospace;
+    background: #ffffff;
+    box-sizing: border-box;
+  }
+  
+
+  .nav-item {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .nav-item::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 0%;
+    padding-top: 2px;
+    border-bottom: 1.5px solid #000;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-item:hover::after {
+    width: 100%;
+  }
+  
+  .actions .btn {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .actions .btn:hover {
+    background-color: #333;
+  }
+
+  .dropdown {
+    position: relative;
+    transition: all 0.3s;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 260px;
+    z-index: 1;
+    padding: 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-item {
+    padding: 5px 10px;
+    font-size: 15px;
+    color: black;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+  text-decoration: underline;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    transition: all 0.3s;
+}
+
+  /* header close  */
+/* product open  */
+.product .product-img>img:last-child{
+  display: none;
+}
+.product:hover .product-img>img:first-child{
+  display: none;
+}
+.product:hover .product-img>img:last-child{
+  display: block;
+  transition: all 0.3s;
+}
+/* product close  */
