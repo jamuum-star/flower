@@ -1,6 +1,19 @@
+import React, { useState } from "react";
 import Product from "../components/Product";
+import ShoppingCart from "../components/ShoppingCart";
 
 function Home() {
+  
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (item) => {
+    setCartItems([...cartItems, item]);
+  };
+
+  const removeFromCart = (itemId) => {
+    const updatedCart = cartItems.filter((item) => item.id !== itemId);
+    setCartItems(updatedCart);
+  };
   return (
     <>
       <section>
@@ -93,6 +106,7 @@ function Home() {
               title="Personalised Plant + Pot Lucky Dip"
               review="15 Reviews"
               price="$234.99"
+              addToCart={addToCart}
             />
             <Product
               img1="/public/images/product-img-3.png"
@@ -100,6 +114,7 @@ function Home() {
               title="Flower Jars"
               review="1265 Reviews"
               price="$304.99"
+              addToCart={addToCart}
             />
             <Product
               img1="/public/images/product-img-3.png"
@@ -107,6 +122,7 @@ function Home() {
               title="Flower Jars"
               review="1265 Reviews"
               price="$304.99"
+              addToCart={addToCart}
             />
             <Product
               img1="/public/images/product-img-3.png"
@@ -114,6 +130,7 @@ function Home() {
               title="Flower Jars"
               review="1265 Reviews"
               price="$304.99"
+              addToCart={addToCart}
             />
             <Product
               img1="/public/images/product-img-3.png"
@@ -121,6 +138,7 @@ function Home() {
               title="Flower Jars"
               review="1265 Reviews"
               price="$304.99"
+              addToCart={addToCart}
             />
             <Product
               img1="/public/images/product-img-3.png"
@@ -128,6 +146,7 @@ function Home() {
               title="Flower Jars"
               review="1265 Reviews"
               price="$304.99"
+              addToCart={addToCart}
             />
           </div>
           <div className="text-center my-4">
@@ -135,9 +154,10 @@ function Home() {
               SHOW ALL PRODUCTS
             </button>
           </div>
+          {/* <ShoppingCart cartItems={cartItems} /> */}
         </div>
       </section>
-
+      <ShoppingCart cartItems={cartItems} removeFromCart={removeFromCart} />
       <section>
         <div>
           <div className="relative">

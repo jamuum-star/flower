@@ -1,10 +1,23 @@
-import { AlignLeft, ChevronDown, Search, ShoppingBag, X } from "lucide-react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { AlignLeft, ChevronDown, Search, ShoppingBag, X } from "lucide-react";
+import ShoppingCart from "./ShoppingCart"; // Import the ShoppingCart component
 
 function Header() {
-  const [isOpen, setOpen] = useState(false);
-  const [search, setSearch] = useState(false);
+   const [isOpen, setOpen] = useState(false);
+   const [openCart, setOpenCart] = useState(false);
+   const [search, setSearch] = useState(false);
+   const [cartItems, setCartItems] = useState([]);
+
+   const addToCart = (item) => {
+     setCartItems([...cartItems, item]);
+   };
+
+   const removeFromCart = (itemId) => {
+     const updatedCart = cartItems.filter((item) => item.id !== itemId);
+     setCartItems(updatedCart);
+   };
+
   return (
     <>
       <div className="mb-[68px]">
@@ -89,16 +102,16 @@ function Header() {
                       <Search className="absolute top-4 right-5 w-9" />
                     </div>
                     <X
-                      onClick={(prev) => setSearch(!prev)}
+                      onClick={() => setSearch(false)}
                       className="absolute top-5 right-5 text-White text-6xl"
                     />
                   </div>
                 )}
               </div>
               <div className=" relative">
-                <ShoppingBag />
+                <ShoppingBag onClick={() => setOpenCart(true)} />
                 <span className=" absolute top-[-16px] right-[-6px] bg-SmoothRed text-white rounded-full w-5 h-5 text-center">
-                  5
+                  {cartItems.length}
                 </span>
               </div>
             </div>
@@ -122,11 +135,11 @@ function Header() {
                     </ul>
                   </div>
                   <Link
-                  to="gifts"
-                  className=" text-xl font-light transition-all duration-300"
-                >
-                  Gifts
-                </Link>
+                    to="gifts"
+                    className=" text-xl font-light transition-all duration-300"
+                  >
+                    Gifts
+                  </Link>
 
                   <Link
                     to="plants"
@@ -148,13 +161,33 @@ function Header() {
                   </Link>
                 </ul>
                 <div className=" absolute top-10 right-10">
-                  <X onClick={(prev) => setOpen(!prev)} className=" text-7xl" />
+                  <X onClick={() => setOpen(false)} className=" text-7xl" />
                 </div>
               </div>
             )}
           </div>
         </div>
       </div>
+      {openCart && (
+        <div className="fixed bg-gray-900 bg-opacity-50 top-0 left-0 right-0 bottom-0 flex justify-center items-center">
+          <div className="bg-white p-4 rounded-lg">
+            <h2 className="text-xl font-bold mb-2">Shopping Cart</h2>
+            <ShoppingCart
+              cartItems={cartItems}
+              removeFromCart={removeFromCart}
+              addToCart={addToCart}
+            />{" "}
+            {/* Include the ShoppingCart component here */}
+            <button
+            
+              className="bg-red-500 text-white px-4 py-2 rounded mt-4"
+              onClick={() => setOpenCart(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
