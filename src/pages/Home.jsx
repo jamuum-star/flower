@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import Product from "../components/Product";
 import ShoppingCart from "../components/ShoppingCart";
+import CartPage from "../components/CartPage";
 
 function Home() {
-  
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (item) => {
     setCartItems([...cartItems, item]);
+    console.log("Adding to cart:", item);
   };
 
   const removeFromCart = (itemId) => {
     const updatedCart = cartItems.filter((item) => item.id !== itemId);
     setCartItems(updatedCart);
   };
+
   return (
     <>
       <section>
@@ -154,10 +156,11 @@ function Home() {
               SHOW ALL PRODUCTS
             </button>
           </div>
-          {/* <ShoppingCart cartItems={cartItems} /> */}
         </div>
       </section>
-      <ShoppingCart cartItems={cartItems} removeFromCart={removeFromCart} />
+
+      <CartPage cartItems={cartItems} removeFromCart={removeFromCart} />
+
       <section>
         <div>
           <div className="relative">

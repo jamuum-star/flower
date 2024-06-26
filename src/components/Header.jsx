@@ -1,22 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { AlignLeft, ChevronDown, Search, ShoppingBag, X } from "lucide-react";
-import ShoppingCart from "./ShoppingCart"; // Import the ShoppingCart component
+import CartPage from "./CartPage";
 
 function Header() {
-   const [isOpen, setOpen] = useState(false);
-   const [openCart, setOpenCart] = useState(false);
-   const [search, setSearch] = useState(false);
-   const [cartItems, setCartItems] = useState([]);
+  const [isOpen, setOpen] = useState(false);
+  const [search, setSearch] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
 
-   const addToCart = (item) => {
-     setCartItems([...cartItems, item]);
-   };
+  const addToCart = (item) => {
+    setCartItems([...cartItems, item]); // Add the item to cartItems
+  };
 
-   const removeFromCart = (itemId) => {
-     const updatedCart = cartItems.filter((item) => item.id !== itemId);
-     setCartItems(updatedCart);
-   };
+  const removeFromCart = (itemId) => {
+    const updatedCart = cartItems.filter((item) => item.id !== itemId);
+    setCartItems(updatedCart);
+  };
 
   return (
     <>
@@ -29,9 +28,8 @@ function Header() {
                 className="text-3xl sm:hidden cursor-pointer"
               />
               <div className="text-xl text-Red uppercase tracking-wide font-bold">
-                <Link to={"/"}>
-                  {" "}
-                  EVE<span className=" text-SmoothRed">FLOWER</span>
+                <Link to="/">
+                  EVE<span className="text-SmoothRed">FLOWER</span>
                 </Link>
               </div>
             </div>
@@ -55,26 +53,25 @@ function Header() {
                 </div>
                 <Link
                   to="gifts"
-                  className=" text-xl font-light transition-all duration-300"
+                  className="text-xl font-light transition-all duration-300"
                 >
                   Gifts
                 </Link>
                 <Link
                   to="plants"
-                  className=" text-xl font-light transition-all duration-300"
+                  className="text-xl font-light transition-all duration-300"
                 >
-                  PLANTS
+                  Plants
                 </Link>
-
                 <Link
                   to="about"
-                  className=" text-xl font-light transition-all duration-300"
+                  className="text-xl font-light transition-all duration-300"
                 >
                   About
                 </Link>
                 <Link
                   to="contact"
-                  className=" text-xl font-light transition-all duration-300"
+                  className="text-xl font-light transition-all duration-300"
                 >
                   Contact
                 </Link>
@@ -87,7 +84,7 @@ function Header() {
                   placeholder="search"
                   className="py-2 border border-Gray px-2 text-sm placeholder:text-black outline-none rounded-sm"
                 />
-                <Search className=" absolute top-2 right-3 w-5" />
+                <Search className="absolute top-2 right-3 w-5" />
               </div>
               <div className="md:hidden">
                 <Search onClick={() => setSearch(true)} />
@@ -108,16 +105,19 @@ function Header() {
                   </div>
                 )}
               </div>
-              <div className=" relative">
-                <ShoppingBag onClick={() => setOpenCart(true)} />
-                <span className=" absolute top-[-16px] right-[-6px] bg-SmoothRed text-white rounded-full w-5 h-5 text-center">
-                  {cartItems.length}
-                </span>
+              <div className="relative">
+                <Link to="/cart">
+                  <ShoppingBag />
+                  <span className="absolute top-[-16px] right-[-6px] bg-SmoothRed text-white rounded-full w-5 h-5 text-center">
+                    {cartItems.length}
+                    
+                  </span>
+                </Link>
               </div>
             </div>
             {isOpen && (
-              <div className="fixed bg-SmoothRed h-full top-0  left-0 w-96 transition-all text-white flex justify-center flex-col shadow-lg">
-                <ul className="flex flex-col items-center transition-transform  justify-center gap-12 text-3xl cursor-pointer">
+              <div className="fixed bg-SmoothRed h-full top-0 left-0 w-96 transition-all text-white flex justify-center flex-col shadow-lg">
+                <ul className="flex flex-col items-center transition-transform justify-center gap-12 text-3xl cursor-pointer">
                   <div className="dropdown">
                     <button className="text-xl font-light flex items-center">
                       Flowers <ChevronDown className="ml-2" />
@@ -136,58 +136,37 @@ function Header() {
                   </div>
                   <Link
                     to="gifts"
-                    className=" text-xl font-light transition-all duration-300"
+                    className="text-xl font-light transition-all duration-300"
                   >
                     Gifts
                   </Link>
-
                   <Link
                     to="plants"
-                    className=" text-xl font-light transition-all duration-300"
+                    className="text-xl font-light transition-all duration-300"
                   >
-                    PLANTS
+                    Plants
                   </Link>
                   <Link
                     to="about"
-                    className=" text-xl font-light transition-all duration-300"
+                    className="text-xl font-light transition-all duration-300"
                   >
                     About
                   </Link>
                   <Link
                     to="contact"
-                    className=" text-xl font-light transition-all duration-300"
+                    className="text-xl font-light transition-all duration-300"
                   >
                     Contact
                   </Link>
                 </ul>
-                <div className=" absolute top-10 right-10">
-                  <X onClick={() => setOpen(false)} className=" text-7xl" />
+                <div className="absolute top-10 right-10">
+                  <X onClick={() => setOpen(false)} className="text-7xl" />
                 </div>
               </div>
             )}
           </div>
         </div>
       </div>
-      {openCart && (
-        <div className="fixed bg-gray-900 bg-opacity-50 top-0 left-0 right-0 bottom-0 flex justify-center items-center">
-          <div className="bg-white p-4 rounded-lg">
-            <h2 className="text-xl font-bold mb-2">Shopping Cart</h2>
-            <ShoppingCart
-              cartItems={cartItems}
-              removeFromCart={removeFromCart}
-              addToCart={addToCart}
-            />{" "}
-            {/* Include the ShoppingCart component here */}
-            <button
-            
-              className="bg-red-500 text-white px-4 py-2 rounded mt-4"
-              onClick={() => setOpenCart(false)}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
     </>
   );
 }
