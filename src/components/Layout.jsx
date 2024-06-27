@@ -6,7 +6,7 @@ import CartPage from "./CartPage"
 function Layout() {
   return (
     <>
-      <Header />
+      <Header/>
       <Outlet />
       <Footer />
     </>

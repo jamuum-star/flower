@@ -1,70 +1,59 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 
-// Create context object
 const CartContext = createContext();
 
-// Create provider component
+const cartReducer = (state, action) => {
+  switch (action.type) {
+    case "ADD_TO_CART":
+      // Find if item already exists in cart
+      const existingItem = state.find((item) => item.id === action.item.id);
+      if (existingItem) {
+        // Increase quantity if item exists
+        return state.map((item) =>
+          item.id === action.item.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      }
+      // Add new item with quantity 1 if it doesn't exist
+      return [...state, { ...action.item, quantity: 1 }];
+    case "REMOVE_FROM_CART":
+      return state.filter((item) => item.id !== action.id);
+    case "UPDATE_CART_ITEM_QUANTITY":
+      return state.map((item) =>
+        item.id === action.id ? { ...item, quantity: action.quantity } : item
+      );
+    default:
+      return state;
+  }
+};
+
 export const CartProvider = ({ children }) => {
-  // State to hold cart items
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, dispatch] = useReducer(cartReducer, []);
 
-  // Function to add an item to the cart
   const addToCart = (item) => {
-    const existingItemIndex = cartItems.findIndex(
-      (cartItem) => cartItem.id === item.id
-    );
+    dispatch({ type: "ADD_TO_CART", item });
+  };
 
-    if (existingItemIndex !== -1) {
-      // Item already exists in cart, update quantity
-      const updatedCart = [...cartItems];
-      updatedCart[existingItemIndex].quantity += item.quantity;
-      setCartItems(updatedCart);
+  const removeFromCart = (id) => {
+    dispatch({ type: "REMOVE_FROM_CART", id });
+  };
+
+  const updateCartItemQuantity = (id, quantity) => {
+    if (quantity <= 0) {
+      removeFromCart(id);
     } else {
-      // Item does not exist in cart, add new item
-      setCartItems([...cartItems, item]);
+      dispatch({ type: "UPDATE_CART_ITEM_QUANTITY", id, quantity });
     }
   };
 
-  // Function to remove an item from the cart
-  const removeFromCart = (itemId) => {
-    const updatedCart = cartItems.filter((item) => item.id !== itemId);
-    setCartItems(updatedCart);
-  };
-
-  // Function to update quantity of an item in the cart
-  const updateQuantity = (itemId, newQuantity) => {
-    const updatedCart = cartItems.map((item) =>
-      item.id === itemId ? { ...item, quantity: newQuantity } : item
-    );
-    setCartItems(updatedCart);
-  };
-
-  // Calculate total quantity of items in the cart
-  const getTotalQuantity = () => {
-    return cartItems.reduce((total, item) => total + item.quantity, 0);
-  };
-
-  // Calculate total price of items in the cart
-  const getTotalPrice = () => {
-    return cartItems.reduce(
-      (total, item) => total + item.price * item.quantity,
-      0
-    );
-  };
-
-  // Context value object
-  const contextValue = {
-    cartItems,
-    addToCart,
-    removeFromCart,
-    updateQuantity,
-    getTotalQuantity,
-    getTotalPrice,
-  };
-
   return (
-    <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
+    <CartContext.Provider
+      value={{ cartItems, addToCart, removeFromCart, updateCartItemQuantity }}
+    >
+      {children}
+    </CartContext.Provider>
   );
 };
 
-export default CartContext;
+export const useCart = () => useContext(CartContext);
