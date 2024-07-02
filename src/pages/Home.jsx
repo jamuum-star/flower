@@ -31,6 +31,22 @@ function Home() {
       review: "1265 Reviews",
       price: "$304.99",
     },
+    {
+      id: 3,
+      img1: "/images/seasional/l1.jpg",
+      img2: "/images/seasional/l2.jpg",
+      title: "Personalised Plant + Pot Lucky Dip",
+      review: "15 Reviews",
+      price: "$234.99",
+    },
+    {
+      id: 4,
+      img1: "/images/seasional/m1.jpg",
+      img2: "/images/seasional/m2.jpg",
+      title: "Flower Jars",
+      review: "1265 Reviews",
+      price: "$304.99",
+    },
     // Add more flowers as needed
   ];
 
@@ -141,7 +157,7 @@ function Home() {
                     <ReactStars
                       count={5}
                       size={24}
-                      value={4}
+                      value={flower.rating}
                       edit={false}
                       activeColor="#ffd700"
                     />
