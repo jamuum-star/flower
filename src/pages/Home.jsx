@@ -1,19 +1,17 @@
-import React, { useState } from "react";
-import { useCart } from "../components/CartContext.jsx"; // Import useCart from CartContext
-import ReactStars from "react-rating-stars-component"; // Import ReactStars
+import React from "react";
+import { useCart } from "../components/CartContext"; // Adjust path based on your project structure
+import { Link } from "react-router-dom";
+import ReactStars from "react-rating-stars-component";
 //nessery
 function Home() {
-  //const [cartItems, setCartItems] = useState([]);
   const { addToCart } = useCart();
-  // const addToCart = (item) => {
-  //   setCartItems([...cartItems, item]);
-  //   console.log("Adding to cart:", item);
-  // };
 
-  const removeFromCart = (itemId) => {
-    const updatedCart = cartItems.filter((item) => item.id !== itemId);
-    setCartItems(updatedCart);
+  const handleAddToCart = (flower) => {
+    addToCart({ ...flower, quantity: 1 });
+    // You can optionally show a confirmation message here
+    // or perform other actions after adding to cart.
   };
+
   const flowers = [
     {
       id: 1,
@@ -137,18 +135,20 @@ function Home() {
           <div className="flex flex-wrap gap-4 justify-center">
             {flowers.map((flower) => (
               <div key={flower.id} className="product w-[280px]">
-                <div className="product-img items-center">
-                  <img
-                    className="w-[280px] h-[350px]"
-                    src={flower.img1}
-                    alt={flower.title}
-                  />
-                  <img
-                    className="w-[280px] h-[350px]"
-                    src={flower.img2}
-                    alt={flower.title}
-                  />
-                </div>
+                <Link to={`/product/${flower.id}`}>
+                  <div className="product-img items-center">
+                    <img
+                      className="w-[280px] h-[350px]"
+                      src={flower.img1}
+                      alt={flower.title}
+                    />
+                    <img
+                      className="w-[280px] h-[350px]"
+                      src={flower.img2}
+                      alt={flower.title}
+                    />
+                  </div>
+                </Link>
                 <div className="contact bg-[#fbfbfb] p-2">
                   <h4 className="text-sm font-normal leading-6 scroll-m-5">
                     {flower.title}
@@ -167,7 +167,7 @@ function Home() {
                   </div>
                   <p>{flower.price}</p>
                   <button
-                    onClick={() => addToCart(flower)}
+                    onClick={() => handleAddToCart(flower)}
                     className="flex bg-blue-500 text-white px-2 py-2 rounded hover:bg-blue-600 transition duration-300"
                   >
                     Add to Cart
@@ -242,7 +242,7 @@ function Home() {
       <section className="py-5">
         <div className="container px-10 mx-auto">
           <h1 className="p-4 text-[#383c4f] font-semibold text-center scroll-m-20 text-xl font-ligh">
-            We’re re-inventing the flower industry by doing things the LVLY way
+            We're re-inventing the flower industry by doing things the LVLY way
           </h1>
           <div className="border-t border-black my-4"></div>
           <div className="flex flex-wrap gap-4 justify-center">
@@ -334,4 +334,3 @@ function Home() {
 }
 
 export default Home;
-
