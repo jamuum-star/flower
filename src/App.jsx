@@ -12,7 +12,8 @@ import Contact from "./pages/Contact";
 import CartPage from "./components/CartPage";
 import { CartProvider } from "./components/CartContext";
 import ProductDetail from "./components/ProductDetail";
-
+import CheckoutPage from "./pages/CheckoutPage";
+import PurchasedProducts from "./pages/PurchasedProducts";
 
 function App() {
   return (
@@ -29,10 +30,9 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/cart" element={<CartPage />} />
-            <Route
-              path="/product/:id"
-              element={<ProductDetail  />}
-            />
+            <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/purchased-products" element={<PurchasedProducts />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
           </Route>
         </Routes>
       </BrowserRouter>
@@ -41,4 +41,3 @@ function App() {
 }
 
 export default App;
-

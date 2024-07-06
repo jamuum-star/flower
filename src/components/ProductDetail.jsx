@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import { useCart } from "./CartContext";
-import flowersData from "./services/giftService";// Assuming flowersData is imported correctly
+import flowersData from "./services/giftService"; // Assuming flowersData is imported correctly
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -133,12 +133,21 @@ const ProductDetail = () => {
           <p className="text-xl font-semibold text-gray-800 mb-4">
             Total: ${totalPrice.toFixed(2)}
           </p>
-          <button
-            onClick={handleAddToCart}
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 mt-4"
-          >
-            Add to Cart
-          </button>
+          <div className="flex space-x-4">
+            <button
+              onClick={handleAddToCart}
+              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300"
+            >
+              Add to Cart
+            </button>
+            <Link
+              to="/checkout"
+              onClick={handleAddToCart}
+              className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition duration-300"
+            >
+              Proceed to Checkout
+            </Link>
+          </div>
         </div>
       </div>
     </div>
@@ -146,8 +155,5 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
-
-
-
 
 

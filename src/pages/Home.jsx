@@ -19,7 +19,9 @@ function Home() {
       img2: "/images/lvly-personalised-plant-teal_400.png",
       title: "Personalised Plant + Pot Lucky Dip",
       review: "15 Reviews",
-      price: "$234.99",
+      price: 234.99,
+      rating: 4.5,
+      description: "A unique combination of personalized plant and pot.",
     },
     {
       id: 2,
@@ -27,23 +29,20 @@ function Home() {
       img2: "/images/product-img-4.png",
       title: "Flower Jars",
       review: "1265 Reviews",
-      price: "$304.99",
+      price: 304.99,
+      rating: 4.5,
+      description: "Beautifully arranged flower jars.",
     },
     {
       id: 3,
-      img1: "/images/seasional/l1.jpg",
-      img2: "/images/seasional/l2.jpg",
-      title: "Personalised Plant + Pot Lucky Dip",
-      review: "15 Reviews",
-      price: "$234.99",
-    },
-    {
-      id: 4,
       img1: "/images/seasional/m1.jpg",
       img2: "/images/seasional/m2.jpg",
-      title: "Flower Jars",
-      review: "1265 Reviews",
-      price: "$304.99",
+      title: "Blossoming Spring Mix",
+      review: "120 Reviews",
+      price: 219.99,
+      rating: 4.6,
+      description:
+        "A vibrant mix of spring blossoms to bring fresh energy to your space.",
     },
     // Add more flowers as needed
   ];
