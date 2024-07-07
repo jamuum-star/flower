@@ -40,50 +40,108 @@ function Gifts() {
 
   return (
     <div>
-      <h1>Gifts</h1>
-      <div className="flex flex-wrap gap-4 justify-center">
-        {flowers.map((flower) => (
-          <div key={flower.id} className="product w-[280px]">
-            <Link to={`/product/${flower.id}`}>
-              <div className="product-img items-center">
-                <img
-                  className="w-[280px] h-[350px]"
-                  src={flower.img1}
-                  alt={flower.title}
-                />
-                <img
-                  className="w-[280px] h-[350px]"
-                  src={flower.img2}
-                  alt={flower.title}
-                />
+      <div className="bg-custom-blue min-s-screen flex flex-col items-center justify-center p-0">
+        <div className="bg-custom-blue p-8 rounded-lg  text-center max-w-3xl">
+          <p className="text-gray-600 mb-2">★★★★★ 4.50 from 4,959 reviews</p>
+          <h1 className="text-4xl font-bold text-gray-800 mb-4">
+            Explosion Boxes
+          </h1>
+          <p className="text-gray-600">
+            Looking for a totally unique way to surprise someone you love? Our
+            new explosion boxes are the perfect way to do just that! Make them
+            laugh, shout, and squeal with an explosion of colourful
+            eco-confetti. Our team are out delivering boxes of joy 7-days a
+            week.
+          </p>
+        </div>
+      </div>
+      <div className="relative pt-0">
+        <div className="w-full">
+          <video
+            className="w-full object-cover md:h-100 h-[428px]"
+            src="/public/video/giftbg.mp4"
+            alt="home-video"
+            autoPlay
+            loop
+            
+            controls
+          />
+        </div>
+      </div>
+      <section className="section">
+        <div className="container px-4 mx-auto">
+          <h1 className="p-4 text-[#383c4f] font-semibold text-center scroll-m-20 text-3xl md:text-4xl">
+            Shop All Gifts
+          </h1>
+          <div className="flex flex-wrap gap-4 justify-center">
+            {flowers.map((flower) => (
+              <div key={flower.id} className="product w-[280px]">
+                <Link to={`/product/${flower.id}`}>
+                  <div className="product-img items-center">
+                    <img
+                      className="w-[280px] h-[350px]"
+                      src={flower.img1}
+                      alt={flower.title}
+                    />
+                    <img
+                      className="w-[280px] h-[350px]"
+                      src={flower.img2}
+                      alt={flower.title}
+                    />
+                  </div>
+                </Link>
+                <div className="contact bg-[#fbfbfb] p-2">
+                  <h4 className="text-sm font-normal leading-6 scroll-m-5">
+                    {flower.title}
+                  </h4>
+                  <div className="rating flex gap-2 items-center">
+                    <ReactStars
+                      count={5}
+                      size={24}
+                      value={flower.rating}
+                      edit={false}
+                      activeColor="#ffd700"
+                    />
+                    <p className="text-sm font-normal leading-6 scroll-m-5">
+                      {flower.review}
+                    </p>
+                  </div>
+                  <p>${flower.price}</p>
+                  <button
+                    onClick={() => handleAddToCart(flower)}
+                    className="flex bg-blue-500 text-white px-2 py-2 rounded hover:bg-blue-600 transition duration-300"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
               </div>
-            </Link>
-            <div className="contact bg-[#fbfbfb] p-2">
-              <h4 className="text-sm font-normal leading-6 scroll-m-5">
-                {flower.title}
-              </h4>
-              <div className="rating flex gap-2 items-center">
-                <ReactStars
-                  count={5}
-                  size={24}
-                  value={flower.rating}
-                  edit={false}
-                  activeColor="#ffd700"
-                />
-                <p className="text-sm font-normal leading-6 scroll-m-5">
-                  {flower.review}
-                </p>
-              </div>
-              <p>{flower.price}</p>
-              <button
-                onClick={() => handleAddToCart(flower)}
-                className="flex bg-blue-500 text-white px-2 py-2 rounded hover:bg-blue-600 transition duration-300"
-              >
-                Add to Cart
-              </button>
-            </div>
+            ))}
           </div>
-        ))}
+        </div>
+      </section>
+      <div className="relative pt-4">
+        <div className="w-full">
+          <img
+            className="w-full object-cover md:h-240 h-[530px]"
+            src="/public/images/plantbg.jpg"
+            alt="home-img"
+          />
+        </div>
+        <div className="py-5 w-full md:bg-slate-700  md:w-2/6 absolute h-[220px] md:right-20 md:top-44 md:bottom-40 ml-72 text-center xs:rounded xs:w-64 xs:right-7 xs:bg-slate-600 xs:bottom-0 xs:top-42 max-auto">
+          <h1 className="text-white scroll-m-20 md:text-3xl font-bold tracking-tight xs:text-xs">
+            Flowers & Personalised Gifts
+          </h1>
+          <p className="leading-5 md:text-sm [&:not(:first-child)]:mt-4 text-white xs:text-xs xs:leading-5">
+            Locally-sourced plants, flowers, and personalized gifts to make them
+            smile.
+          </p>
+          <p className="leading-5 md:text-sm [&:not(:first-child)]:mt-4 text-white xs:text-xs">
+            Same day delivery available, 7 days a week.
+          </p>
+          <button className="px-4 py-2 font-bold bg-white text-slate-700 rounded mt-4 hover:shadow-md">
+            SHOP ALL
+          </button>
+        </div>
       </div>
     </div>
   );
