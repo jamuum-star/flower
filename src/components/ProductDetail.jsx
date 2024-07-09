@@ -1,48 +1,47 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
-import { useCart } from "./CartContext";
+import { useCart } from "./CartContext";// Import useCart from CartContext
 import flowersData from "./services/giftService"; // Assuming flowersData is imported correctly
 
 const ProductDetail = () => {
-  const { id } = useParams();
-  const { addToCart } = useCart();
-  const product = flowersData.find((p) => p.id === parseInt(id));
+  const { id } = useParams(); // Extract id from URL parameters
+  const { addToCart } = useCart(); // Access addToCart function from CartContext
+  const product = flowersData.find((p) => p.id === parseInt(id)); // Find product by id from flowersData
 
-  const [selectedImage, setSelectedImage] = useState("");
-  const [quantity, setQuantity] = useState(1);
+  const [selectedImage, setSelectedImage] = useState(""); // State for selected image
+  const [quantity, setQuantity] = useState(1); // State for quantity of product to add to cart
 
-  // Set initial state based on product data
+  // Set initial state based on product data when product changes
   useEffect(() => {
     if (product) {
-      setSelectedImage(product.img1);
+      setSelectedImage(product.img1); // Set initial selected image
       setQuantity(1); // Reset quantity whenever product changes
     }
   }, [product]);
-
+  // Function to handle thumbnail click and change selected image
   const handleThumbnailClick = (image) => {
     setSelectedImage(image);
   };
-
+  // Function to increment quantity
   const incrementQuantity = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);
   };
-
+  // Function to decrement quantity, with minimum quantity of 1
   const decrementQuantity = () => {
     if (quantity > 1) {
       setQuantity((prevQuantity) => prevQuantity - 1);
     }
   };
-
+  // Calculate total price based on product price and quantity
   const totalPrice = product ? product.price * quantity : 0;
-
+  // Function to add product to cart
   const handleAddToCart = () => {
     if (product) {
-      addToCart({ ...product, quantity });
-      // Optionally show a confirmation message or perform other actions after adding to cart
+      addToCart({ ...product, quantity }); // Add product to cart with selected quantity
     }
   };
-
+  // Render loading state if product is not found
   if (!product) {
     return (
       <div className="h-screen flex justify-center items-center text-white font-bold">
@@ -54,7 +53,7 @@ const ProductDetail = () => {
       </div>
     );
   }
-
+  // Render product details if product is found
   return (
     <div className="container mx-auto p-6">
       <div className="flex flex-col md:flex-row items-start bg-white shadow-lg rounded-lg overflow-hidden">

@@ -6,8 +6,8 @@ import { useCart } from "../components/CartContext"; // Import useCart from Cart
 
 
 function Header() {
-  const [isOpen, setOpen] = useState(false);
-  const [search, setSearch] = useState(false);
+  const [isOpen, setOpen] = useState(false); // State to manage mobile menu open/close
+  const [search, setSearch] = useState(false); // State to manage search bar visibility
   const { cartItems } = useCart(); // Use the cartItems from the context
 
   return (

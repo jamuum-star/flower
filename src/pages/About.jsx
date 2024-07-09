@@ -1,5 +1,5 @@
 import React from "react";
-import flowerBackground from "./bg.png"; // Import the background image
+import flowerBackground from "./aboutbg.avif"; // Import the background image
 
 function About() {
   return (
@@ -11,7 +11,9 @@ function About() {
         backgroundColor: "#12172b",
         overflow: "hidden",
         padding: "90px 30px",
-        paddingTop: "150px",
+        paddingTop: "60px",
+        width:"100%",
+        margin:"0",
       }}
     >
       <div className="container mx-auto flex flex-col lg:flex-row px-5">

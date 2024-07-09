@@ -2,6 +2,7 @@
 
   // Mock data
   const flowersData = [
+    //seasional flowers
     {
       id: 1,
       img1: "/images/seasional/a1.jpg",
@@ -100,7 +101,8 @@
       description:
         "always looking on the bright side of life with a same-day delivery of iconic Sunflowers..",
     },
-    //sibgle variety products
+
+    //single variety products
     {
       id: 10,
       img1: "/images/singlevarity/a1.png",
@@ -297,6 +299,108 @@
       rating: 4.6,
       description:
         "Illuminate your day with the radiant beauty of these iconic sunflowers, symbolizing happiness and warmth with their golden hues.",
+    },
+
+    // gifts products
+
+    {
+      id: 28,
+      img1: "/images/gifts/a1.jpg",
+      img2: "/images/gifts/a2.jpg",
+      title: "Winter Wonderland",
+      review: "40 Reviews",
+      price: 110.0,
+      rating: 4.5,
+      description:
+        "A delightful collection of winter-themed goodies, perfect for bringing warmth and cheer to the cold season.",
+    },
+    {
+      id: 29,
+      img1: "/images/gifts/b1.jpg",
+      img2: "/images/gifts/b2.jpg",
+      title: "Rose Reverie",
+      review: "1225 Reviews",
+      price: 325.0,
+      rating: 4.8,
+      description:
+        "A luxurious set of rose-scented bath products, designed to provide a spa-like experience at home.",
+    },
+    {
+      id: 30,
+      img1: "/images/gifts/c1.jpg",
+      img2: "/images/gifts/c2.jpg",
+      title: "Rustic Romance",
+      review: "180 Reviews",
+      price: 235.0,
+      rating: 4.7,
+      description:
+        "A charming set of rustic-themed home decor items, perfect for adding a cozy touch to any room.",
+    },
+    {
+      id: 31,
+      img1: "/images/gifts/d1.jpg",
+      img2: "/images/gifts/d2.jpg",
+      title: "Floral Symphony",
+      review: "950 Reviews",
+      price: 180.0,
+      rating: 4.6,
+      description:
+        "A vibrant collection of artisanal candles, each inspired by different floral scents to bring the garden indoors.",
+    },
+    {
+      id: 32,
+      img1: "/images/gifts/e1.jpg",
+      img2: "/images/gifts/e2.jpg",
+      title: "Festive Cheer",
+      review: "410 Reviews",
+      price: 285.0,
+      rating: 4.4,
+      description:
+        "A lively gift basket filled with festive treats and goodies, perfect for celebrating special occasions.",
+    },
+    {
+      id: 33,
+      img1: "/images/gifts/f1.jpg",
+      img2: "/images/gifts/f2.jpg",
+      title: "Passionate Embrace",
+      review: "305 Reviews",
+      price: 255.0,
+      rating: 4.7,
+      description:
+        "A romantic gift set featuring premium chocolates and a plush teddy bear, ideal for expressing heartfelt emotions.",
+    },
+    {
+      id: 34,
+      img1: "/images/gifts/g1.jpg",
+      img2: "/images/gifts/g2.jpg",
+      title: "Timeless Charm",
+      review: "480 Reviews",
+      price: 240.0,
+      rating: 4.8,
+      description:
+        "An elegant collection of vintage-inspired jewelry, perfect for adding a touch of classic charm to any outfit.",
+    },
+    {
+      id: 35,
+      img1: "/images/gifts/h1.jpg",
+      img2: "/images/gifts/h2.jpg",
+      title: "Magenta Splendor",
+      review: "820 Reviews",
+      price: 200.0,
+      rating: 4.7,
+      description:
+        "A splendid set of magenta-themed stationery, designed to brighten up your desk and inspire creativity.",
+    },
+    {
+      id: 36,
+      img1: "/images/gifts/i1.jpg",
+      img2: "/images/gifts/i2.jpg",
+      title: "Sunny Blossoms",
+      review: "275 Reviews",
+      price: 215.0,
+      rating: 4.5,
+      description:
+        "A cheerful gift box filled with sunflower-themed kitchen accessories, perfect for adding a touch of sunshine to your home.",
     },
 
     // Add other mock data items here

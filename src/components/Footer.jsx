@@ -1,5 +1,5 @@
 import React from "react";
-
+//footer
 function Footer() {
   return (
     <footer className="bg-gray-100 py-12 text-gray-800">
@@ -19,7 +19,7 @@ function Footer() {
                   here
                 </a>
               </li>
-              <li>Phone: (03) 9071 2481</li>
+              <li>Phone: (061) 799 2890</li>
               <li>
                 Follow us{" "}
                 <a
@@ -100,41 +100,7 @@ function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
-          <div>
-            <h6 className="text-lg font-semibold mb-4">Shop by Occasion</h6>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="hover:underline">
-                  Anniversary
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  Housewarming
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  Gifts for Teachers
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  Limited Edition Gifts
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  Bridal
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  Plant Delivery
-                </a>
-              </li>
-            </ul>
+            
           </div>
         </div>
         <div className="flex flex-col items-center pt-10">
@@ -159,7 +125,7 @@ function Footer() {
           <ul className="flex flex-wrap space-x-4 text-gray-600">
             <li>
               <a href="#" className="hover:underline">
-                Sydney
+                Mogadishu
               </a>
             </li>
             <li>
