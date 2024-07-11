@@ -15,7 +15,7 @@ function Footer() {
             <ul className="space-y-2">
               <li>
                 Email us{" "}
-                <a href="mailto:here" className="text-red-600 hover:underline">
+                <a href="mailto:eveflowersom@gmail.com" className="text-red-600 hover:underline">
                   here
                 </a>
               </li>
@@ -130,47 +130,47 @@ function Footer() {
             </li>
             <li>
               <a href="#" className="hover:underline">
-                Central Coast NSW
+                Central Hargisa
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline">
-                Wollongong
+                Kismayo
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline">
-                Brisbane
+                Baidoa
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline">
-                Gold Coast
+                Afgoye
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline">
-                Adelaide
+                Bosaso
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline">
-                Melbourne
+                Barwo
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline">
-                Mornington Peninsula
+                Marko
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline">
-                Geelong
+                Janale
               </a>
             </li>
             <li>
               <a href="#" className="hover:underline">
-                Perth
+                Galkayo
               </a>
             </li>
           </ul>

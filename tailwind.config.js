@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         "custom-blue": "#c1e2f2",
-        "custom-bluen":"#80B7D1",
+        "custom-bluen": "#80B7D1",
         DarkRead: "#840C0B",
         Red: "#BE1614",
         SmoothRed: "#D8605F",
@@ -21,4 +21,5 @@ export default {
   },
   plugins: [],
 };
+
 

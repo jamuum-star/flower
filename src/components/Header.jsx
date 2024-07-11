@@ -1,15 +1,13 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { AlignLeft, ChevronDown, Search, ShoppingBag, X } from "lucide-react";
+import { AlignLeft, ChevronDown, Search, ShoppingBag, X ,Package} from "lucide-react";
 import { useCart } from "../components/CartContext"; // Import useCart from CartContext
-
 
 function Header() {
   const [isOpen, setOpen] = useState(false); // State to manage mobile menu open/close
   const [search, setSearch] = useState(false); // State to manage search bar visibility
   const { cartItems } = useCart(); // Use the cartItems from the context
-
+  
   return (
     <>
       <div className="mb-[68px]">
@@ -127,6 +125,14 @@ function Header() {
                   </span>
                 </Link>
               </div>
+              <div className="relative">
+                <Link
+                  to="/purchased-products"
+                  className="text-xl font-light flex items-center gap-2 hover:text-red-600 transition duration-300"
+                >
+                  <Package className="w-8 h-8 text-gray-700 hover:text-red-600 transition duration-300" />
+                </Link>
+              </div>
             </div>
             {isOpen && (
               <div className="fixed inset-0 bg-red-700 bg-opacity-95 flex justify-center items-center z-30">
@@ -205,4 +211,3 @@ function Header() {
 }
 
 export default Header;
-

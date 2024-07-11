@@ -46,7 +46,7 @@ const ProductDetail = () => {
     return (
       <div className="h-screen flex justify-center items-center text-white font-bold">
         <img
-          className="w-[300px] h-[300px] object-cover rounded-3xl"
+          className="w-[800px] h-[600px] object-cover rounded-2xl"
           src="/not.gif"
           alt="Product not found"
         />

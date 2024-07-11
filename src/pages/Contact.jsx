@@ -219,7 +219,7 @@ function Contact() {
         <h1 className="mb-4 text-3xl font-semibold">Follow Us</h1>
         <div className="space-x-4">
           <a
-            href="https://www.facebook.com/SunDus-Store-104392012312717/?ref=page_internal"
+            href="https://www.facebook.com/profile.php?id=100095057142235"
             className="text-yellow-500 text-3xl hover:scale-110 transform transition"
           >
             <FontAwesomeIcon icon={faFacebookF} />
