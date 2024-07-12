@@ -403,6 +403,107 @@
         "A cheerful gift box filled with sunflower-themed kitchen accessories, perfect for adding a touch of sunshine to your home.",
     },
 
+    // native flowers
+    {
+      id: 37,
+      img1: "/images/native/a1.jpg",
+      img2: "/images/native/a2.jpg",
+      title: "Desert Bloom",
+      review: "40 Reviews",
+      price: 85.0,
+      rating: 4.5,
+      description:
+        "A vibrant mix of desert flowers that thrive in arid climates, bringing a touch of wild beauty to your home.",
+    },
+    {
+      id: 38,
+      img1: "/images/native/b1.jpg",
+      img2: "/images/native/b2.jpg",
+      title: "Savannah Splendor",
+      review: "1225 Reviews",
+      price: 150.0,
+      rating: 4.8,
+      description:
+        "An exotic collection of flowers native to the African savannah, perfect for adding a unique touch to any space.",
+    },
+    {
+      id: 39,
+      img1: "/images/native/c1.jpg",
+      img2: "/images/native/c2.jpg",
+      title: "Prairie Beauty",
+      review: "180 Reviews",
+      price: 120.0,
+      rating: 4.7,
+      description:
+        "A charming set of wildflowers native to the prairies, bringing the simplicity and beauty of the grasslands indoors.",
+    },
+    {
+      id: 40,
+      img1: "/images/native/d1.jpg",
+      img2: "/images/native/d2.jpg",
+      title: "Tropical Paradise",
+      review: "950 Reviews",
+      price: 130.0,
+      rating: 4.6,
+      description:
+        "A vibrant assortment of tropical flowers, ideal for creating a lush, exotic atmosphere in your home.",
+    },
+    {
+      id: 41,
+      img1: "/images/native/e2.jpg",
+      img2: "/images/native/e1.jpg",
+      title: "Mountain Majesty",
+      review: "410 Reviews",
+      price: 175.0,
+      rating: 4.4,
+      description:
+        "A stunning array of mountain wildflowers, capturing the essence of high-altitude beauty and resilience.",
+    },
+    {
+      id: 42,
+      img1: "/images/native/f1.jpg",
+      img2: "/images/native/f2.jpg",
+      title: "Meadow Bliss",
+      review: "305 Reviews",
+      price: 95.0,
+      rating: 4.7,
+      description:
+        "A delightful mix of meadow flowers, perfect for adding a touch of countryside charm to any setting.",
+    },
+    {
+      id: 43,
+      img1: "/images/native/g1.jpg",
+      img2: "/images/native/g2.jpg",
+      title: "Woodland Whimsy",
+      review: "480 Reviews",
+      price: 110.0,
+      rating: 4.8,
+      description:
+        "An enchanting collection of woodland flowers, ideal for bringing a bit of forest magic into your home.",
+    },
+    {
+      id: 44,
+      img1: "/images/native/h1.jpg",
+      img2: "/images/native/h2.jpg",
+      title: "Seaside Serenity",
+      review: "820 Reviews",
+      price: 105.0,
+      rating: 4.7,
+      description:
+        "A serene assortment of flowers native to coastal areas, perfect for evoking the calm and beauty of the seaside.",
+    },
+    {
+      id: 45,
+      img1: "/images/native/i1.jpg",
+      img2: "/images/native/i2.jpg",
+      title: "Forest Foliage",
+      review: "275 Reviews",
+      price: 125.0,
+      rating: 4.5,
+      description:
+        "A rich collection of flowers and foliage from forested regions, perfect for creating a natural and tranquil environment.",
+    },
+
     // Add other mock data items here
   ];
 

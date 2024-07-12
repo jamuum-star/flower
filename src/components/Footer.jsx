@@ -178,7 +178,7 @@ function Footer() {
             <p>© EVE Flower Pty Ltd. 2022 Liquor License No. 36148709</p>
             <p className="mt-4">
               In the spirit of reconciliation, EVE Flower acknowledges the
-              Traditional Custodians of country throughout Australia and their
+              Traditional Custodians of country throughout Somalia and their
               connections to land, sea and community. We pay our respect to
               their elders past and present and extend that respect to all
               Aboriginal and Torres Strait Islander peoples today.

@@ -109,17 +109,85 @@ function Home() {
       description:
         "A joyful arrangement of vibrant flowers in a beautiful vase.",
     },
+
+    {
+      id: 34,
+      img1: "/images/gifts/g1.jpg",
+      img2: "/images/gifts/g2.jpg",
+      title: "Timeless Charm",
+      review: "480 Reviews",
+      price: 240.0,
+      rating: 4.8,
+      description:
+        "An elegant collection of vintage-inspired jewelry, perfect for adding a touch of classic charm to any outfit.",
+    },
+    {
+      id: 35,
+      img1: "/images/gifts/h1.jpg",
+      img2: "/images/gifts/h2.jpg",
+      title: "Magenta Splendor",
+      review: "820 Reviews",
+      price: 200.0,
+      rating: 4.7,
+      description:
+        "A splendid set of magenta-themed stationery, designed to brighten up your desk and inspire creativity.",
+    },
+    {
+      id: 36,
+      img1: "/images/gifts/i1.jpg",
+      img2: "/images/gifts/i2.jpg",
+      title: "Sunny Blossoms",
+      review: "275 Reviews",
+      price: 215.0,
+      rating: 4.5,
+      description:
+        "A cheerful gift box filled with sunflower-themed kitchen accessories, perfect for adding a touch of sunshine to your home.",
+    },
+
+    {
+      id: 43,
+      img1: "/images/native/g1.jpg",
+      img2: "/images/native/g2.jpg",
+      title: "Woodland Whimsy",
+      review: "480 Reviews",
+      price: 110.0,
+      rating: 4.8,
+      description:
+        "An enchanting collection of woodland flowers, ideal for bringing a bit of forest magic into your home.",
+    },
+    {
+      id: 44,
+      img1: "/images/native/h1.jpg",
+      img2: "/images/native/h2.jpg",
+      title: "Seaside Serenity",
+      review: "820 Reviews",
+      price: 105.0,
+      rating: 4.7,
+      description:
+        "A serene assortment of flowers native to coastal areas, perfect for evoking the calm and beauty of the seaside.",
+    },
+    {
+      id: 45,
+      img1: "/images/native/i1.jpg",
+      img2: "/images/native/i2.jpg",
+      title: "Forest Foliage",
+      review: "275 Reviews",
+      price: 125.0,
+      rating: 4.5,
+      description:
+        "A rich collection of flowers and foliage from forested regions, perfect for creating a natural and tranquil environment.",
+    },
+
     // Add more flowers as needed
   ];
 
+  //load more products
   const handleLoadMore = () => {
-    setItemsToShow(itemsToShow + 3); // Load 3 more items when clicked
+    setItemsToShow(itemsToShow + 6); // Load 3 more items when clicked
   };
 
   const handleAddToCart = (flower) => {
     addToCart({ ...flower, quantity: 1 });
-    // You can optionally show a confirmation message here
-    // or perform other actions after adding to cart.
   };
 
   return (

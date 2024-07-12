@@ -29,7 +29,7 @@ function PurchasedProducts() {
       }
     }
   }, [location.state]);
-
+  //remove handled order
   const handleRemoveOrder = (index) => {
     const updatedOrders = orders.filter(
       (_, orderIndex) => orderIndex !== index

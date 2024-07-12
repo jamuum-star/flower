@@ -221,18 +221,24 @@ function Contact() {
           <a
             href="https://www.facebook.com/profile.php?id=100095057142235"
             className="text-yellow-500 text-3xl hover:scale-110 transform transition"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={faFacebookF} />
           </a>
           <a
-            href="https://www.instagram.com/sunduslaptops/"
+            href="https://www.instagram.com/mabruukstoreso/"
             className="text-yellow-500 text-3xl hover:scale-110 transform transition"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={faInstagram} />
           </a>
           <a
-            href="https://wa.me/message/HWCQMFVDROBLN1"
+            href="https://wa.me/message/WJZZNSIPTDS3G1"
             className="text-yellow-500 text-3xl hover:scale-110 transform transition"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={faWhatsapp} />
           </a>
