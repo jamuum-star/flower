@@ -191,7 +191,7 @@ function NativeFlowers() {
         <div className="w-full">
           <img
             className="w-full object-cover md:h-240 h-[530px]"
-            src="/public/images/nativebg.jpg"
+            src="/images/nativebg.jpg"
             alt="home-img"
           />
         </div>

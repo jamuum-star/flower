@@ -114,8 +114,6 @@ function Plants() {
 
   const handleAddToCart = (flower) => {
     addToCart({ ...flower, quantity: 1 });
-    // You can optionally show a confirmation message here
-    // or perform other actions after adding to cart.
   };
 
   return (
@@ -191,7 +189,7 @@ function Plants() {
         <div className="w-full">
           <img
             className="w-full object-cover md:h-240 h-[530px]"
-            src="/public/images/plantbg.jpg"
+            src="/images/plantbg.jpg"
             alt="home-img"
           />
         </div>

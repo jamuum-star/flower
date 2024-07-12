@@ -139,7 +139,7 @@ function Gifts() {
         <div className="w-full">
           <video
             className="w-full object-cover md:h-100 h-[428px]"
-            src="/public/video/giftbg.mp4"
+            src="/video/giftbg.mp4"
             alt="home-video"
             autoPlay
             loop
@@ -203,7 +203,7 @@ function Gifts() {
         <div className="w-full">
           <img
             className="w-full object-cover md:h-240 h-[530px]"
-            src="/public/images/giftsbg.jpg"
+            src="/images/giftsbg.jpg"
             alt="home-img"
           />
         </div>

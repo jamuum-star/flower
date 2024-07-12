@@ -109,8 +109,6 @@ function SingleVariety() {
 
   const handleAddToCart = (flower) => {
     addToCart({ ...flower, quantity: 1 });
-    // You can optionally show a confirmation message here
-    // or perform other actions after adding to cart.
   };
 
   return (
@@ -186,7 +184,7 @@ function SingleVariety() {
         <div className="w-full">
           <img
             className="w-full object-cover md:h-240 h-[530px]"
-            src="/public/images/nativebg.jpg"
+            src="/images/nativebg.jpg"
             alt="home-img"
           />
         </div>

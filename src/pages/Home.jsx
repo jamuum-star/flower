@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import { useCart } from "../components/CartContext"; // Adjust path based on your project structure
 import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
@@ -197,7 +197,7 @@ function Home() {
           <div className="w-full">
             <img
               className="w-full object-cover md:h-240 h-[380px]"
-              src="/public/images/lvly-plants-desktop-banner_1800x.png"
+              src="/images/lvly-plants-desktop-banner_1800x.png"
               alt="home-img"
             />
           </div>
@@ -227,7 +227,7 @@ function Home() {
           <div className="flex flex-wrap justify-center mt-4 gap-4">
             <div className="w-60">
               <img
-                src="/public/images/SEASONAL_FLOWERS_cc3194f7-15a5-4.png"
+                src="/images/SEASONAL_FLOWERS_cc3194f7-15a5-4.png"
                 alt="Sympathy Flowers"
                 className="w-full"
               />
@@ -237,7 +237,7 @@ function Home() {
             </div>
             <div className="w-60">
               <img
-                src="/public/images/BIRTHDAY_471dc0ae-9a5b-433e-804d.png"
+                src="/images/BIRTHDAY_471dc0ae-9a5b-433e-804d.png"
                 alt="Birthday Flowers"
                 className="w-full"
               />
@@ -247,7 +247,7 @@ function Home() {
             </div>
             <div className="w-60">
               <img
-                src="/public/images/WELLNESS_df16ed14-ace9-4d29-ab30.png"
+                src="/images/WELLNESS_df16ed14-ace9-4d29-ab30.png"
                 alt="Wellness"
                 className="w-full"
               />
@@ -257,7 +257,7 @@ function Home() {
             </div>
             <div className="w-60">
               <img
-                src="/public/images/CELEBRATION_6043c184-9cd5-4a36-9.png"
+                src="/images/CELEBRATION_6043c184-9cd5-4a36-9.png"
                 alt="Celebration"
                 className="w-full"
               />
@@ -337,7 +337,7 @@ function Home() {
             <div className="w-full">
               <img
                 className="w-full object-cover md:h-250 h-[380px]"
-                src="/public/images/Desktop_-_Sweet_Explosion_box_co.png"
+                src="/images/Desktop_-_Sweet_Explosion_box_co.png"
                 alt="home-img"
               />
             </div>

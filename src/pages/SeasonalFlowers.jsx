@@ -186,7 +186,7 @@ function SeasonalFlowers() {
         <div className="w-full">
           <img
             className="w-full object-cover md:h-240 h-[540px]"
-            src="/public/images/seasionalbanner.jpg"
+            src="/images/seasionalbanner.jpg"
             alt="home-img"
           />
         </div>
